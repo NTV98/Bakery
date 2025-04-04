@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Bakery/static/css/main.ac90bb9b.css",
+    "main.js": "/Bakery/static/js/main.26d4c794.js",
+    "index.html": "/Bakery/index.html",
+    "main.ac90bb9b.css.map": "/Bakery/static/css/main.ac90bb9b.css.map",
+    "main.26d4c794.js.map": "/Bakery/static/js/main.26d4c794.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ac90bb9b.css",
+    "static/js/main.26d4c794.js"
+  ]
+}
