@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/Bakery/static/css/main.ac90bb9b.css",
-    "main.js": "/Bakery/static/js/main.0ea6da3d.js",
+    "main.js": "/Bakery/static/js/main.6945206e.js",
     "index.html": "/Bakery/index.html",
     "main.ac90bb9b.css.map": "/Bakery/static/css/main.ac90bb9b.css.map",
-    "main.0ea6da3d.js.map": "/Bakery/static/js/main.0ea6da3d.js.map"
+    "main.6945206e.js.map": "/Bakery/static/js/main.6945206e.js.map"
   },
   "entrypoints": [
     "static/css/main.ac90bb9b.css",
-    "static/js/main.0ea6da3d.js"
+    "static/js/main.6945206e.js"
   ]
 }
