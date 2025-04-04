@@ -1,6 +1,7 @@
 import React, { createContext, useContext, useReducer, useEffect } from 'react';
 
-const CartContext = createContext();
+// Export the context directly
+export const CartContext = createContext(null);
 
 const cartReducer = (state, action) => {
   switch (action.type) {
@@ -73,18 +74,30 @@ export const CartProvider = ({ children }) => {
     0
   );
 
+  const totalItems = cartItems.reduce((total, item) => total + item.quantity, 0);
+
+  const contextValue = {
+    cartItems,
+    addToCart,
+    removeFromCart,
+    updateQuantity,
+    clearCart,
+    totalItems,
+    totalPrice
+  };
+
   return (
-    <CartContext.Provider value={{ 
-      cartItems, 
-      addToCart, 
-      removeFromCart, 
-      updateQuantity,
-      clearCart,
-      totalPrice 
-    }}>
+    <CartContext.Provider value={contextValue}>
       {children}
     </CartContext.Provider>
   );
 };
 
-export const useCart = () => useContext(CartContext);
+// Improved useCart hook with error handling
+export const useCart = () => {
+  const context = useContext(CartContext);
+  if (context === undefined || context === null) {
+    throw new Error('useCart must be used within a CartProvider');
+  }
+  return context;
+};

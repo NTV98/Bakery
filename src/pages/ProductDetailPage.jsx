@@ -104,8 +104,7 @@ const ProductDetailPage = () => {
           {/* Product Image */}
           <div className="md:w-1/2">
             <div className="bg-white rounded-lg shadow-md overflow-hidden">
-              <img
-                src={product.image || "https://via.placeholder.com/600x400"}
+              <img src={`${process.env.PUBLIC_URL}${product.image}`|| "https://via.placeholder.com/600x400"}
                 alt={product.name}
                 className="w-full h-auto object-cover"
               />
@@ -222,8 +221,8 @@ const ProductDetailPage = () => {
                 <div key={relatedProduct.id} className="card">
                   <Link to={`/products/${relatedProduct.id}`}>
                     <div className="aspect-w-1 aspect-h-1">
-                      <img 
-                        src={relatedProduct.image || "https://via.placeholder.com/300"}
+                      <img src={`${process.env.PUBLIC_URL}${relatedProduct.image}`|| "https://via.placeholder.com/600x400"}
+                       
                         alt={relatedProduct.name}
                         className="object-cover w-full h-64"
                       />

@@ -5,8 +5,7 @@ const Banner = () => {
   return (
     <div className="relative bg-dark">
       <div className="absolute inset-0">
-        <img 
-          src="/Images/bannerv1.png" 
+        <img src={`${process.env.PUBLIC_URL}/Images/bannerv1.png`}
           alt="Delicious cake showcase"
           className="w-full h-full object-cover opacity-50"
         />

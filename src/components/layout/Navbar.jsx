@@ -1,13 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { FaShoppingCart, FaBars, FaTimes } from 'react-icons/fa';
-import { useCart } from '../../context/CartContext';
+import { useCart, CartContext } from '../../context/CartContext';
+import { useTheme, ThemeContext } from '../../context/ThemeContext';
 import { initializeNavIndicators } from './NavbarEffects';
+import ThemeToggle from '../common/ThemeToggle';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const { cartItems } = useCart();
   const location = useLocation();
+  
+  // Use direct context consumption as a fallback
+  const cartContext = React.useContext(CartContext);
+  const themeContext = React.useContext(ThemeContext);
+  
+  // Get cart items safely
+  const totalItems = cartContext ? cartContext.totalItems || 0 : 0;
+  const isDarkMode = themeContext ? themeContext.isDarkMode : false;
   
   // Function to scroll to top with smooth animation
   const scrollToTop = () => {
@@ -33,22 +42,20 @@ const Navbar = () => {
     return () => {
       window.removeEventListener('popstate', handleRouteChange);
     };
-  }, [location.pathname]); // Added dependency on location.pathname to react to route changes
-
-  const totalItems = cartItems.reduce((total, item) => total + item.quantity, 0);
+  }, [location.pathname]);
 
   const navItems = [
-    { name: 'Home', path: '/' },
-    { name: 'About', path: '/about' },
-    { name: 'Products', path: '/products' },
-    { name: 'Contact', path: '/contact' },
+    { name: 'Home', path: '/Bakery/home' },
+    { name: 'Products', path: '/Bakery/products' },
+    { name: 'About', path: '/Bakery/about' },
+    { name: 'Contact', path: '/Bakery/contact' },
   ];
 
   // Pre-calculate the active nav item for better indicator positioning
   const activeNavItem = navItems.find(item => item.path === location.pathname);
 
   return (
-    <nav className="bg-white shadow-md">
+    <nav className={`bg-white shadow-md ${isDarkMode ? 'dark:bg-gray-800 dark:shadow-gray-700/10' : ''} transition-colors duration-300`}>
       <div className="container-custom py-4">
         <div className="flex justify-between items-center">
           <Link to="/" className="font-serif text-2xl font-bold text-primary">
@@ -56,7 +63,7 @@ const Navbar = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-6">
             <ul className="flex space-x-6 relative">
               <div className="absolute bottom-0 h-0.5 bg-primary transition-all duration-500 ease-in-out" 
                    id="indicator"></div>
@@ -67,7 +74,7 @@ const Navbar = () => {
                     className={({ isActive }) =>
                       isActive
                         ? "text-primary font-medium relative py-1 nav-link active"
-                        : "text-dark hover:text-primary transition py-1 nav-link"
+                        : `text-dark ${isDarkMode ? 'dark:text-gray-200' : ''} hover:text-primary ${isDarkMode ? 'dark:hover:text-primary' : ''} transition py-1 nav-link`
                     }
                     onClick={(e) => {
                       const indicator = document.getElementById('indicator');
@@ -86,8 +93,11 @@ const Navbar = () => {
                 </li>
               ))}
             </ul>
+            
+            <ThemeToggle />
+            
             <Link to="/cart" className="relative">
-              <FaShoppingCart className="text-2xl text-dark hover:text-primary transition" />
+              <FaShoppingCart className={`text-2xl text-dark ${isDarkMode ? 'dark:text-gray-200' : ''} hover:text-primary ${isDarkMode ? 'dark:hover:text-primary' : ''} transition`} />
               {totalItems > 0 && (
                 <span className="absolute -top-2 -right-2 bg-primary text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
                   {totalItems}
@@ -97,12 +107,14 @@ const Navbar = () => {
           </div>
 
           {/* Mobile Navigation Button */}
-          <div className="md:hidden">
+          <div className="md:hidden flex items-center space-x-4">
+            <ThemeToggle />
+            
             <button onClick={() => setIsOpen(!isOpen)}>
               {isOpen ? (
-                <FaTimes className="text-2xl" />
+                <FaTimes className={`text-2xl ${isDarkMode ? 'dark:text-gray-200' : ''}`} />
               ) : (
-                <FaBars className="text-2xl" />
+                <FaBars className={`text-2xl ${isDarkMode ? 'dark:text-gray-200' : ''}`} />
               )}
             </button>
           </div>
@@ -121,7 +133,7 @@ const Navbar = () => {
                     className={({ isActive }) =>
                       isActive
                         ? "text-primary font-medium block pl-3 mobile-nav-link active"
-                        : "text-dark hover:text-primary transition block pl-3 mobile-nav-link"
+                        : `text-dark ${isDarkMode ? 'dark:text-gray-200' : ''} hover:text-primary ${isDarkMode ? 'dark:hover:text-primary' : ''} transition block pl-3 mobile-nav-link`
                     }
                     onClick={(e) => {
                       setIsOpen(false);
@@ -138,7 +150,7 @@ const Navbar = () => {
                 </li>
               ))}
               <li>
-                <Link to="/cart" className="flex items-center pl-3" onClick={() => setIsOpen(false)}>
+                <Link to="/cart" className={`flex items-center pl-3 text-dark ${isDarkMode ? 'dark:text-gray-200' : ''} hover:text-primary ${isDarkMode ? 'dark:hover:text-primary' : ''}`} onClick={() => setIsOpen(false)}>
                   <FaShoppingCart className="mr-2" />
                   Cart ({totalItems})
                 </Link>

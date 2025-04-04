@@ -26,8 +26,8 @@ const HomePage = () => {
             {featuredProducts.map((product) => (
               <div key={product.id} className="card">
                 <div className="aspect-w-1 aspect-h-1">
-                  <img 
-                    src={product.image || "https://via.placeholder.com/300"} 
+                  <img src={`${process.env.PUBLIC_URL}${product.image}`|| "https://via.placeholder.com/600x400"}
+                
                     alt={product.name}
                     className="object-cover w-full h-64"
                   />

@@ -6,7 +6,7 @@
 
 @layer base {
   body {
-    @apply font-sans text-dark bg-light;
+    @apply font-sans text-dark bg-light dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300;
   }
   h1, h2, h3, h4, h5 {
     @apply font-serif;
@@ -18,15 +18,37 @@
     @apply py-2 px-4 rounded font-medium transition duration-300;
   }
   .btn-primary {
-    @apply bg-primary text-white hover:bg-opacity-90;
+    @apply bg-primary text-white hover:bg-opacity-90 dark:hover:bg-opacity-80;
   }
   .btn-secondary {
-    @apply bg-secondary text-white hover:bg-opacity-90;
+    @apply bg-secondary text-white hover:bg-opacity-90 dark:hover:bg-opacity-80;
   }
   .card {
-    @apply bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300;
+    @apply bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300 dark:bg-gray-800 dark:shadow-gray-700/20;
   }
   .container-custom {
     @apply px-4 mx-auto max-w-7xl;
+  }
+
+  /* Dark mode specific components */
+  .theme-toggle {
+    @apply flex items-center justify-center w-10 h-10 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-300;
+  }
+
+  /* Additional dark mode adjustments */
+  .dark .text-gray-600 {
+    @apply text-gray-400;
+  }
+  .dark .bg-light {
+    @apply bg-gray-900;
+  }
+  .dark .bg-dark {
+    @apply bg-black;
+  }
+  .dark .bg-white {
+    @apply bg-gray-800;
+  }
+  .dark .text-dark {
+    @apply text-gray-100;
   }
 }

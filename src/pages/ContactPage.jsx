@@ -223,14 +223,14 @@ const ContactPage = () => {
           </div>
         </div>
         
-        {/* Map Section */}
+        {/* Map Section */} 
         <div className="mb-12">
-          <h2 className="text-2xl font-serif font-semibold mb-6 text-center">Our Location</h2>
+          <h2 className="text-2xl font-serif font-semibold mb-6 text-center">Vị trí của chúng tôi</h2>
           <div className="rounded-lg overflow-hidden shadow-lg h-96">
             {/* Replace with actual Google Maps embed code in production */}
             <div className="w-full h-full bg-gray-200 flex items-center justify-center">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3024.2219901290355!2d-74.00425!3d40.71312700000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDQyJzUyLjIiTiA3NMKwMDAnMTUuMyJX!5e0!3m2!1sen!2sus!4v1556400370487!5m2!1sen!2sus"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d510.3606899469342!2d106.62839492360646!3d10.812916169524652!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752b10d3f0046d%3A0x24d75acf037f843!2zQ8O0bmcgdHkgWWFrdWx0IENoaSBOaMOhbmggQ2jhur8gTGFuIFZpw6pu!5e1!3m2!1svi!2s!4v1743758147779!5m2!1svi!2s"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
