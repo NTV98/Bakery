@@ -1,0 +1,187 @@
+{
+  "banner": {
+    "alt": "Trưng bày bánh ngon",
+    "title": "Những chiếc bánh ngon cho mọi dịp",
+    "description": "Được làm thủ công với tình yêu, những chiếc bánh của chúng tôi mang lại niềm vui cho những khoảnh khắc đặc biệt của bạn. Từ sinh nhật đến đám cưới, chúng tôi tạo ra những kiệt tác có thể ăn được.",
+    "shopNow": "Mua Ngay",
+    "contactUs": "Liên Hệ"
+  },
+  "navbar": {
+    "home": "Trang Chủ",
+    "products": "Sản Phẩm",
+    "about": "Giới Thiệu",
+    "contact": "Liên Hệ"
+  },
+  "homePage": {
+    "featuredSection": {
+      "title": "Bánh Nổi Bật Của Chúng Tôi",
+      "description": "Khám phá những chiếc bánh được yêu thích nhất, được làm thủ công với những nguyên liệu tốt nhất cho những khoảnh khắc đặc biệt của bạn.",
+      "viewDetails": "Xem Chi Tiết",
+      "viewAllProducts": "Xem Tất Cả Sản Phẩm"
+    },
+    "whyChooseUs": {
+      "title": "Tại Sao Chọn Chúng Tôi",
+      "description": "Tại Sweet Delights, chúng tôi tự hào về chất lượng, hương vị và nghệ thuật làm bánh.",
+      "quality": {
+        "title": "Chất Lượng Cao Cấp",
+        "description": "Chúng tôi chỉ sử dụng những nguyên liệu tốt nhất, đảm bảo mỗi miếng bánh đều là một niềm vui."
+      },
+      "design": {
+        "title": "Thiết Kế Tùy Chỉnh",
+        "description": "Từ ý tưởng đến sản phẩm, chúng tôi biến ý tưởng bánh của bạn thành hiện thực."
+      },
+      "delivery": {
+        "title": "Giao Hàng Đúng Hẹn",
+        "description": "Chúng tôi trân trọng thời gian của bạn và đảm bảo bánh được giao tươi mới và đúng lịch trình."
+      }
+    }
+  },
+  "contactPage": {
+    "title": "Liên Hệ Với Chúng Tôi",
+    "getInTouch": {
+      "title": "Kết Nối Với Chúng Tôi",
+      "description": "Bạn có thắc mắc về bánh của chúng tôi hoặc muốn đặt hàng tùy chỉnh? Đội ngũ của chúng tôi luôn sẵn sàng hỗ trợ. Liên hệ với chúng tôi bằng bất kỳ phương thức nào dưới đây."
+    },
+    "contactInfo": {
+      "address": {
+        "title": "Địa Chỉ",
+        "value": "123 Đường Bánh, Thị Trấn Bánh, BK 12345"
+      },
+      "phone": {
+        "title": "Điện Thoại",
+        "value": "(123) 456-7890"
+      },
+      "email": {
+        "title": "Email",
+        "value": "info@sweetdelights.com"
+      },
+      "hours": {
+        "title": "Giờ Làm Việc",
+        "value": "Thứ Hai - Thứ Sáu: 9:00 - 19:00\nThứ Bảy: 10:00 - 18:00\nChủ Nhật: Đóng Cửa"
+      }
+    },
+    "form": {
+      "title": "Gửi Tin Nhắn Cho Chúng Tôi",
+      "successMessage": "Cảm ơn bạn đã gửi tin nhắn! Chúng tôi sẽ liên hệ lại với bạn sớm.",
+      "name": {
+        "label": "Họ Tên *",
+        "placeholder": "Tên của bạn",
+        "required": "Vui lòng nhập họ tên"
+      },
+      "email": {
+        "label": "Địa Chỉ Email *",
+        "placeholder": "Email của bạn",
+        "required": "Vui lòng nhập email",
+        "invalid": "Vui lòng nhập địa chỉ email hợp lệ"
+      },
+      "phone": {
+        "label": "Số Điện Thoại",
+        "placeholder": "Số điện thoại của bạn (không bắt buộc)",
+        "invalid": "Vui lòng nhập số điện thoại hợp lệ"
+      },
+      "message": {
+        "label": "Tin Nhắn *",
+        "placeholder": "Chúng tôi có thể giúp gì cho bạn?",
+        "required": "Vui lòng nhập tin nhắn",
+        "tooShort": "Tin nhắn phải có ít nhất 10 ký tự"
+      },
+      "submit": "Gửi Tin Nhắn"
+    },
+    "map": {
+      "title": "Vị trí của chúng tôi"
+    }
+  },
+  "aboutPage": {
+    "hero": {
+      "title": "Câu Chuyện Của Chúng Tôi",
+      "description": "Sweet Delights là tiệm bánh gia đình chuyên tạo ra những chiếc bánh ngon, đẹp mắt cho mọi khoảnh khắc đặc biệt trong cuộc sống."
+    },
+    "history": {
+      "title": "Khởi Đầu Của Chúng Tôi",
+      "paragraph1": "Sweet Delights được thành lập vào năm 2005 bởi đầu bếp Emma Johnson. Điều bắt đầu là một tiệm bánh nhỏ tại nhà đã nhanh chóng phát triển thành một thương hiệu địa phương được yêu thích nhờ bánh ngọt và bánh pastry đặc biệt.",
+      "paragraph2": "Qua nhiều năm, chúng tôi đã mở rộng đội ngũ và sản phẩm, nhưng cam kết về chất lượng chưa bao giờ thay đổi. Chúng tôi vẫn làm mọi thứ từ đầu, sử dụng nguyên liệu tốt nhất và kỹ thuật truyền thống.",
+      "paragraph3": "Hiện nay, Sweet Delights tự hào là tiệm bánh được lựa chọn cho vô số lễ kỷ niệm trong khu vực, từ tiệc sinh nhật nhỏ đến đám cưới lớn và sự kiện doanh nghiệp."
+    },
+    "values": {
+      "title": "Giá Trị Cốt Lõi",
+      "quality": {
+        "title": "Chất Lượng Là Trên Hết",
+        "description": "Chúng tôi không bao giờ nhân nhượng về nguyên liệu hay kỹ thuật. Mỗi chiếc bánh đều được làm với nguyên liệu cao cấp và sự chú ý tỉ mỉ đến từng chi tiết."
+      },
+      "service": {
+        "title": "Dịch Vụ Cá Nhân Hóa",
+        "description": "Chúng tôi tin rằng mỗi dịp lễ kỷ niệm đều độc đáo. Đội ngũ của chúng tôi làm việc chặt chẽ với bạn để tạo ra chiếc bánh hoàn hảo cho dịp đặc biệt của bạn."
+      },
+      "taste": {
+        "title": "Hương Vị Đặc Biệt",
+        "description": "Một chiếc bánh đẹp nên ngon hơn cả vẻ bề ngoài. Chúng tôi tự hào về việc tạo ra những chiếc bánh vừa ngon vừa đẹp."
+      }
+    },
+    "team": {
+      "title": "Gặp Gỡ Đội Ngũ Của Chúng Tôi",
+      "members": {
+        "emma": {
+          "name": "Emma Johnson",
+          "position": "Người Sáng Lập & Đầu Bếp Chính",
+          "description": "Được đào tạo tại Paris, Emma mang 15 năm kinh nghiệm làm bánh vào mỗi sản phẩm."
+        },
+        "michael": {
+          "name": "Michael Chen",
+          "position": "Đầu Bếp Bánh Ngọt",
+          "description": "Bậc thầy của những thiết kế phức tạp, Michael chuyên về bánh cưới và bánh cho các dịp lễ kỷ niệm."
+        },
+        "sophia": {
+          "name": "Sophia Rodriguez",
+          "position": "Nhà Thiết Kế Bánh",
+          "description": "Với nền tảng nghệ thuật, Sophia tạo ra những chi tiết trang trí đẹp nhất cho bánh."
+        },
+        "james": {
+          "name": "James Wilson",
+          "position": "Quan Hệ Khách Hàng",
+          "description": "James đảm bảo mỗi khách hàng đều nhận được sự chăm sóc cá nhân trong suốt quá trình đặt hàng."
+        }
+      }
+    },
+    "bakery": {
+      "title": "Tiệm Bánh Của Chúng Tôi"
+    },
+    "cta": {
+      "title": "Bạn đã sẵn sàng đặt bánh tùy chỉnh?",
+      "description": "Cho dù bạn đang lên kế hoạch đám cưới, sinh nhật hay sự kiện đặc biệt, chúng tôi rất muốn tạo ra chiếc bánh hoàn hảo cho lễ kỷ niệm của bạn.",
+      "viewCakes": "Xem Bánh Của Chúng Tôi",
+      "contactUs": "Liên Hệ Với Chúng Tôi"
+    }
+  },
+  "footer": {
+    "about": {
+      "description": "Tạo ra những kỷ niệm ngọt ngào từ năm 2005. Niềm đam mê của chúng tôi là tạo ra chiếc bánh hoàn hảo cho những khoảnh khắc đặc biệt của bạn."
+    },
+    "quickLinks": {
+      "title": "Liên Kết Nhanh",
+      "home": "Trang Chủ",
+      "about": "Giới Thiệu",
+      "products": "Sản Phẩm",
+      "contact": "Liên Hệ"
+    },
+    "categories": {
+      "title": "Danh Mục",
+      "birthday": "Bánh Sinh Nhật",
+      "wedding": "Bánh Cưới",
+      "custom": "Bánh Tùy Chỉnh",
+      "pastries": "Bánh Ngọt"
+    },
+    "contact": {
+      "title": "Liên Hệ Với Chúng Tôi"
+    },
+    "copyright": "Đã đăng ký Bản quyền."
+  },
+  "common": {
+    "price": "${price}"
+  },
+  "pagination": {
+    "showing": "Hiển thị ${startItem} đến ${endItem} của ${totalItems} sản phẩm",
+    "previous": "Trước",
+    "next": "Tiếp",
+    "pageOf": "Trang ${currentPage} của ${totalPages}"
+  }
+}

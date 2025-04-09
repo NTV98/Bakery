@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { FaMapMarkerAlt, FaPhone, FaEnvelope, FaClock } from 'react-icons/fa';
+import { useTranslation } from '../i18n';
 
 const ContactPage = () => {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -32,27 +34,27 @@ const ContactPage = () => {
     
     // Validate name
     if (!formData.name.trim()) {
-      newErrors.name = 'Name is required';
+      newErrors.name = t('contactPage.form.name.required');
     }
     
     // Validate email
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!formData.email.trim()) {
-      newErrors.email = 'Email is required';
+      newErrors.email = t('contactPage.form.email.required');
     } else if (!emailRegex.test(formData.email)) {
-      newErrors.email = 'Please enter a valid email address';
+      newErrors.email = t('contactPage.form.email.invalid');
     }
     
     // Validate phone (optional but if provided must be valid)
     if (formData.phone.trim() && !/^[0-9]{10,}$/.test(formData.phone.replace(/[^0-9]/g, ''))) {
-      newErrors.phone = 'Please enter a valid phone number';
+      newErrors.phone = t('contactPage.form.phone.invalid');
     }
     
     // Validate message
     if (!formData.message.trim()) {
-      newErrors.message = 'Message is required';
+      newErrors.message = t('contactPage.form.message.required');
     } else if (formData.message.trim().length < 10) {
-      newErrors.message = 'Message must be at least 10 characters long';
+      newErrors.message = t('contactPage.form.message.tooShort');
     }
     
     setErrors(newErrors);
@@ -80,16 +82,15 @@ const ContactPage = () => {
   return (
     <div className="bg-white py-12">
       <div className="container-custom">
-        <h1 className="text-4xl font-serif font-bold mb-8 text-center">Contact Us</h1>
+        <h1 className="text-4xl font-serif font-bold mb-8 text-center">{t('contactPage.title')}</h1>
         
         {/* Contact Info and Form */}
         <div className="flex flex-col lg:flex-row gap-12 mb-16">
           {/* Contact Information */}
           <div className="lg:w-1/3">
-            <h2 className="text-2xl font-serif font-semibold mb-6">Get in Touch</h2>
+            <h2 className="text-2xl font-serif font-semibold mb-6">{t('contactPage.getInTouch.title')}</h2>
             <p className="text-gray-600 mb-8">
-              Have questions about our cakes or want to place a custom order? 
-              Our team is here to help. Reach out to us using any of the methods below.
+              {t('contactPage.getInTouch.description')}
             </p>
             
             <div className="space-y-6">
@@ -98,10 +99,9 @@ const ContactPage = () => {
                   <FaMapMarkerAlt className="text-primary" />
                 </div>
                 <div>
-                  <h3 className="font-semibold mb-1">Address</h3>
+                  <h3 className="font-semibold mb-1">{t('contactPage.contactInfo.address.title')}</h3>
                   <p className="text-gray-600">
-                    123 Cake Street<br />
-                    Bakery Town, BK 12345
+                    {t('contactPage.contactInfo.address.value')}
                   </p>
                 </div>
               </div>
@@ -111,8 +111,8 @@ const ContactPage = () => {
                   <FaPhone className="text-primary" />
                 </div>
                 <div>
-                  <h3 className="font-semibold mb-1">Phone</h3>
-                  <p className="text-gray-600">(123) 456-7890</p>
+                  <h3 className="font-semibold mb-1">{t('contactPage.contactInfo.phone.title')}</h3>
+                  <p className="text-gray-600">{t('contactPage.contactInfo.phone.value')}</p>
                 </div>
               </div>
               
@@ -121,8 +121,8 @@ const ContactPage = () => {
                   <FaEnvelope className="text-primary" />
                 </div>
                 <div>
-                  <h3 className="font-semibold mb-1">Email</h3>
-                  <p className="text-gray-600">info@sweetdelights.com</p>
+                  <h3 className="font-semibold mb-1">{t('contactPage.contactInfo.email.title')}</h3>
+                  <p className="text-gray-600">{t('contactPage.contactInfo.email.value')}</p>
                 </div>
               </div>
               
@@ -131,11 +131,9 @@ const ContactPage = () => {
                   <FaClock className="text-primary" />
                 </div>
                 <div>
-                  <h3 className="font-semibold mb-1">Business Hours</h3>
-                  <p className="text-gray-600">
-                    Monday - Friday: 9am - 7pm<br />
-                    Saturday: 10am - 6pm<br />
-                    Sunday: Closed
+                  <h3 className="font-semibold mb-1">{t('contactPage.contactInfo.hours.title')}</h3>
+                  <p className="text-gray-600 whitespace-pre-line">
+                    {t('contactPage.contactInfo.hours.value')}
                   </p>
                 </div>
               </div>
@@ -145,18 +143,18 @@ const ContactPage = () => {
           {/* Contact Form */}
           <div className="lg:w-2/3">
             <div className="bg-white rounded-lg shadow-md p-8">
-              <h2 className="text-2xl font-serif font-semibold mb-6">Send us a Message</h2>
+              <h2 className="text-2xl font-serif font-semibold mb-6">{t('contactPage.form.title')}</h2>
               
               {isSubmitted ? (
                 <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-6">
-                  <p>Thank you for your message! We'll get back to you shortly.</p>
+                  <p>{t('contactPage.form.successMessage')}</p>
                 </div>
               ) : null}
               
               <form onSubmit={handleSubmit}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                   <div>
-                    <label htmlFor="name" className="block text-gray-700 mb-2">Full Name *</label>
+                    <label htmlFor="name" className="block text-gray-700 mb-2">{t('contactPage.form.name.label')}</label>
                     <input
                       type="text"
                       id="name"
@@ -164,13 +162,13 @@ const ContactPage = () => {
                       value={formData.name}
                       onChange={handleChange}
                       className={`w-full p-3 border ${errors.name ? 'border-red-500' : 'border-gray-300'} rounded-md focus:outline-none focus:ring-2 focus:ring-primary`}
-                      placeholder="Your name"
+                      placeholder={t('contactPage.form.name.placeholder')}
                     />
                     {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name}</p>}
                   </div>
                   
                   <div>
-                    <label htmlFor="email" className="block text-gray-700 mb-2">Email Address *</label>
+                    <label htmlFor="email" className="block text-gray-700 mb-2">{t('contactPage.form.email.label')}</label>
                     <input
                       type="email"
                       id="email"
@@ -178,14 +176,14 @@ const ContactPage = () => {
                       value={formData.email}
                       onChange={handleChange}
                       className={`w-full p-3 border ${errors.email ? 'border-red-500' : 'border-gray-300'} rounded-md focus:outline-none focus:ring-2 focus:ring-primary`}
-                      placeholder="Your email"
+                      placeholder={t('contactPage.form.email.placeholder')}
                     />
                     {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
                   </div>
                 </div>
                 
                 <div className="mb-6">
-                  <label htmlFor="phone" className="block text-gray-700 mb-2">Phone Number</label>
+                  <label htmlFor="phone" className="block text-gray-700 mb-2">{t('contactPage.form.phone.label')}</label>
                   <input
                     type="tel"
                     id="phone"
@@ -193,13 +191,13 @@ const ContactPage = () => {
                     value={formData.phone}
                     onChange={handleChange}
                     className={`w-full p-3 border ${errors.phone ? 'border-red-500' : 'border-gray-300'} rounded-md focus:outline-none focus:ring-2 focus:ring-primary`}
-                    placeholder="Your phone number (optional)"
+                    placeholder={t('contactPage.form.phone.placeholder')}
                   />
                   {errors.phone && <p className="text-red-500 text-sm mt-1">{errors.phone}</p>}
                 </div>
                 
                 <div className="mb-6">
-                  <label htmlFor="message" className="block text-gray-700 mb-2">Message *</label>
+                  <label htmlFor="message" className="block text-gray-700 mb-2">{t('contactPage.form.message.label')}</label>
                   <textarea
                     id="message"
                     name="message"
@@ -207,7 +205,7 @@ const ContactPage = () => {
                     onChange={handleChange}
                     rows="5"
                     className={`w-full p-3 border ${errors.message ? 'border-red-500' : 'border-gray-300'} rounded-md focus:outline-none focus:ring-2 focus:ring-primary`}
-                    placeholder="How can we help you?"
+                    placeholder={t('contactPage.form.message.placeholder')}
                   ></textarea>
                   {errors.message && <p className="text-red-500 text-sm mt-1">{errors.message}</p>}
                 </div>
@@ -216,7 +214,7 @@ const ContactPage = () => {
                   type="submit" 
                   className="btn btn-primary py-3 px-6"
                 >
-                  Send Message
+                  {t('contactPage.form.submit')}
                 </button>
               </form>
             </div>
@@ -225,7 +223,7 @@ const ContactPage = () => {
         
         {/* Map Section */} 
         <div className="mb-12">
-          <h2 className="text-2xl font-serif font-semibold mb-6 text-center">Vị trí của chúng tôi</h2>
+          <h2 className="text-2xl font-serif font-semibold mb-6 text-center">{t('contactPage.map.title')}</h2>
           <div className="rounded-lg overflow-hidden shadow-lg h-96">
             {/* Replace with actual Google Maps embed code in production */}
             <div className="w-full h-full bg-gray-200 flex items-center justify-center">
@@ -242,7 +240,6 @@ const ContactPage = () => {
             </div>
           </div>
         </div>
-
       </div>
     </div>
   );
