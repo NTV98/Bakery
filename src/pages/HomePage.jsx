@@ -13,7 +13,7 @@ const HomePage = () => {
       <Banner />
       
       {/* Featured Products Section */}
-      <section className="py-16 bg-light">
+      <section className="py-12 bg-white">
         <div className="container-custom">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-serif font-bold mb-4">Our Featured Cakes</h2>
@@ -62,7 +62,7 @@ const HomePage = () => {
       </section>
       
       {/* Why Choose Us Section */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-gray-200 dark:bg-gray-800">
         <div className="container-custom">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-serif font-bold mb-4">Why Choose Us</h2>

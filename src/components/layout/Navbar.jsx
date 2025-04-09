@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { FaShoppingCart, FaBars, FaTimes } from 'react-icons/fa';
-import { useCart, CartContext } from '../../context/CartContext';
-import { useTheme, ThemeContext } from '../../context/ThemeContext';
+import { CartContext } from '../../context/CartContext';
 import { initializeNavIndicators } from './NavbarEffects';
 import ThemeToggle from '../common/ThemeToggle';
 
@@ -12,11 +11,9 @@ const Navbar = () => {
   
   // Use direct context consumption as a fallback
   const cartContext = React.useContext(CartContext);
-  const themeContext = React.useContext(ThemeContext);
   
   // Get cart items safely
   const totalItems = cartContext ? cartContext.totalItems || 0 : 0;
-  const isDarkMode = themeContext ? themeContext.isDarkMode : false;
   
   // Function to scroll to top with smooth animation
   const scrollToTop = () => {
@@ -25,7 +22,6 @@ const Navbar = () => {
       behavior: 'smooth'
     });
   };
-
   useEffect(() => {
     // Initialize indicator positions after component mount and when route changes
     initializeNavIndicators();
@@ -45,17 +41,14 @@ const Navbar = () => {
   }, [location.pathname]);
 
   const navItems = [
-    { name: 'Home', path: '/Bakery/home' },
-    { name: 'Products', path: '/Bakery/products' },
-    { name: 'About', path: '/Bakery/about' },
-    { name: 'Contact', path: '/Bakery/contact' },
+    { name: 'Home', path: '/home' },
+    { name: 'Products', path: '/products' },
+    { name: 'About', path: '/about' },
+    { name: 'Contact', path: '/contact' },
   ];
 
-  // Pre-calculate the active nav item for better indicator positioning
-  const activeNavItem = navItems.find(item => item.path === location.pathname);
-
   return (
-    <nav className={`bg-white shadow-md ${isDarkMode ? 'dark:bg-gray-800 dark:shadow-gray-700/10' : ''} transition-colors duration-300`}>
+    <nav className="transition-colors duration-300 bg-gray-800 shadow-gray-700/10">
       <div className="container-custom py-4">
         <div className="flex justify-between items-center">
           <Link to="/" className="font-serif text-2xl font-bold text-primary">
@@ -73,8 +66,8 @@ const Navbar = () => {
                     to={item.path}
                     className={({ isActive }) =>
                       isActive
-                        ? "text-primary font-medium relative py-1 nav-link active"
-                        : `text-dark ${isDarkMode ? 'dark:text-gray-200' : ''} hover:text-primary ${isDarkMode ? 'dark:hover:text-primary' : ''} transition py-1 nav-link`
+                        ? `text-primary font-medium relative py-1 nav-link active`
+                        : `text-gray-200 hover:text-primary transition py-1 nav-link`
                     }
                     onClick={(e) => {
                       const indicator = document.getElementById('indicator');
@@ -97,7 +90,7 @@ const Navbar = () => {
             <ThemeToggle />
             
             <Link to="/cart" className="relative">
-              <FaShoppingCart className={`text-2xl text-dark ${isDarkMode ? 'dark:text-gray-200' : ''} hover:text-primary ${isDarkMode ? 'dark:hover:text-primary' : ''} transition`} />
+              <FaShoppingCart className="text-2xl text-gray-200 hover:text-primary transition" />
               {totalItems > 0 && (
                 <span className="absolute -top-2 -right-2 bg-primary text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
                   {totalItems}
@@ -112,9 +105,9 @@ const Navbar = () => {
             
             <button onClick={() => setIsOpen(!isOpen)}>
               {isOpen ? (
-                <FaTimes className={`text-2xl ${isDarkMode ? 'dark:text-gray-200' : ''}`} />
+                <FaTimes className="text-2xl text-gray-200" />
               ) : (
-                <FaBars className={`text-2xl ${isDarkMode ? 'dark:text-gray-200' : ''}`} />
+                <FaBars className="text-2xl text-gray-200" />
               )}
             </button>
           </div>
@@ -132,8 +125,8 @@ const Navbar = () => {
                     to={item.path}
                     className={({ isActive }) =>
                       isActive
-                        ? "text-primary font-medium block pl-3 mobile-nav-link active"
-                        : `text-dark ${isDarkMode ? 'dark:text-gray-200' : ''} hover:text-primary ${isDarkMode ? 'dark:hover:text-primary' : ''} transition block pl-3 mobile-nav-link`
+                        ? `text-primary font-medium block pl-3 mobile-nav-link active`
+                        : `text-gray-200 hover:text-primary transition block pl-3 mobile-nav-link`
                     }
                     onClick={(e) => {
                       setIsOpen(false);
@@ -150,7 +143,7 @@ const Navbar = () => {
                 </li>
               ))}
               <li>
-                <Link to="/cart" className={`flex items-center pl-3 text-dark ${isDarkMode ? 'dark:text-gray-200' : ''} hover:text-primary ${isDarkMode ? 'dark:hover:text-primary' : ''}`} onClick={() => setIsOpen(false)}>
+                <Link to="/cart" className="flex items-center pl-3 text-gray-200 hover:text-primary" onClick={() => setIsOpen(false)}>
                   <FaShoppingCart className="mr-2" />
                   Cart ({totalItems})
                 </Link>

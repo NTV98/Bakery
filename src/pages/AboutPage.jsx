@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const AboutPage = () => {
   return (
-    <div className="py-12 bg-light">
+    <div className="py-12 bg-white">
       <div className="container-custom">
         {/* Hero Section */}
         <div className="text-center mb-16">

@@ -13,6 +13,7 @@ import ContactPage from './pages/ContactPage';
 import ScrollToTop from './components/common/ScrollToTop';
 
 function App() {
+  
   return (
     <ThemeProvider>
       <CartProvider>
@@ -21,13 +22,19 @@ function App() {
           <Navbar />
           <main className="flex-grow">
             <Routes>
-              <Route path="/" element={<Navigate to="Bakery/home" replace />} />
-              <Route path="Bakery/home" element={<HomePage />} />
-              <Route path="Bakery/about" element={<AboutPage />} />
-              <Route path="Bakery/products" element={<ProductsPage />} />
-              <Route path="Bakery/products/:id" element={<ProductDetailPage />} />
-              <Route path="Bakery/cart" element={<CartPage />} />
-              <Route path="Bakery/contact" element={<ContactPage />} />
+              {/* Redirect root to home */}
+              <Route path="/" element={<Navigate to="/home" replace />} />
+              
+              {/* Main routes */}
+              <Route path="/home" element={<HomePage />} />
+              <Route path="/about" element={<AboutPage />} />
+              <Route path="/products" element={<ProductsPage />} />
+              <Route path="/products/:id" element={<ProductDetailPage />} />
+              <Route path="/cart" element={<CartPage />} />
+              <Route path="/contact" element={<ContactPage />} />
+              
+              {/* Fallback redirect */}
+              <Route path="*" element={<Navigate to="/home" replace />} />
             </Routes>
           </main>
           <Footer />
@@ -36,5 +43,6 @@ function App() {
     </ThemeProvider>
   );
 }
+
 
 export default App;

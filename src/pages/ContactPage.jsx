@@ -78,7 +78,7 @@ const ContactPage = () => {
   };
 
   return (
-    <div className="bg-light py-12">
+    <div className="bg-white py-12">
       <div className="container-custom">
         <h1 className="text-4xl font-serif font-bold mb-8 text-center">Contact Us</h1>
         

@@ -88,7 +88,7 @@ const ProductDetailPage = () => {
     .slice(0, 3);
 
   return (
-    <div className="bg-light py-12">
+    <div className="bg-white py-12">
       <div className="container-custom">
         {/* Breadcrumb Navigation */}
         <div className="mb-6 text-sm text-gray-600">
