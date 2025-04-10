@@ -30,7 +30,7 @@ const Banner = () => {
             </Link>
             <Link
               to="/contact"
-              className="btn bg-white text-dark hover:bg-gray-100 text-center px-8 py-3 rounded"
+              className="btn bg-white text-dark text-center px-8 py-3 rounded"
             >
               {t('banner.contactUs')}
             </Link>

@@ -111,13 +111,15 @@ const Navbar = () => {
             </Link>
           </div>
 
-          {/* Language Button - Positioned to the right */}
-          <button
-            onClick={handleLanguageToggle}
-            className="hidden md:flex items-center px-4 py-2 bg-primary text-white rounded hover:bg-opacity-90 transition absolute right-0 mr-[15px]"
-          >
-            {language === 'eng' ? 'VI' : 'EN'}
-          </button>
+          {/* Language Toggle Button - Positioned at right edge */}
+          <div className="absolute right-0 top-1/2 transform -translate-y-1/2 mr-[15px] hidden md:block">
+            <button
+              onClick={handleLanguageToggle}
+              className="flex items-center px-4 py-2 bg-primary text-white rounded hover:bg-opacity-90 transition"
+            >
+              {language === 'eng' ? 'VI' : 'EN'}
+            </button>
+          </div>
 
           {/* Mobile Navigation Button */}
           <div className="md:hidden flex items-center space-x-4">
