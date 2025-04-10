@@ -118,5 +118,5 @@ const ProductListing = () => {
     </div>
   );
 };
-/* Products grid */
+
 export default ProductListing;
