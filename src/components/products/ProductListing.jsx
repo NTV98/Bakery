@@ -118,5 +118,5 @@ const ProductListing = () => {
     </div>
   );
 };
-// xxxxsssss
+// xxxx
 export default ProductListing;
