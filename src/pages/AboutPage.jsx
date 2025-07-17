@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from '../i18n';
 
+
+//
 const AboutPage = () => {
   const { t } = useTranslation();
 
