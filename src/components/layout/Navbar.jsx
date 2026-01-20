@@ -8,6 +8,7 @@ import { useTranslation } from '../../i18n';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isLangToggleDisabled, setIsLangToggleDisabled] = useState(false);
   const location = useLocation();
   
   // Use the shared language context
@@ -51,9 +52,17 @@ const Navbar = () => {
   }, [location.pathname]); // Language dependency is no longer needed here
 
   const handleLanguageToggle = () => {
+    if (isLangToggleDisabled) return;
+
+    setIsLangToggleDisabled(true);
+
     // Simply call changeLanguage from context
     const newLanguage = language === 'eng' ? 'vi' : 'eng';
     changeLanguage(newLanguage);
+
+    window.setTimeout(() => {
+      setIsLangToggleDisabled(false);
+    }, 5000);
   };
 
   const navItems = [
@@ -115,7 +124,10 @@ const Navbar = () => {
           <div className="absolute right-0 top-1/2 transform -translate-y-1/2 mr-[15px] hidden md:block">
             <button
               onClick={handleLanguageToggle}
-              className="flex items-center px-4 py-2 bg-primary text-white rounded hover:bg-opacity-90 transition"
+              disabled={isLangToggleDisabled}
+              className={`flex items-center px-4 py-2 bg-primary text-white rounded transition ${
+                isLangToggleDisabled ? 'opacity-60 cursor-not-allowed' : 'hover:bg-opacity-90'
+              }`}
             >
               {language === 'eng' ? 'VI' : 'EN'}
             </button>
